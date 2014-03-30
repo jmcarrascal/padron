@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <!--
+  Loading Handsontable (full distribution that includes all dependencies apart from jQuery)
+  -->
+  <script data-jsfiddle="common" src="lib/jquery.min.js"></script>
+  <script data-jsfiddle="common" src="dist/jquery.handsontable.full.js"></script>
+  <link data-jsfiddle="common" rel="stylesheet" media="screen" href="dist/jquery.handsontable.full.css">
+
+  <!--
+  Loading demo dependencies. They are used here only to enhance the examples on this page
+  -->
+  <link data-jsfiddle="common" rel="stylesheet" media="screen" href="demo/css/samples.css">
+  <link rel="stylesheet" media="screen" href="demo/js/highlight/styles/github.css">
+  <link rel="stylesheet" href="demo/css/font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<body class="home">
+
+<div id="container">
+
+<div class="centerLayout">
+
+
+</div>
+
+ 
+        <a onclick="exportar();">Exportar JSON</a>
+ 
+
+        <div id="example"></div>
+
+        <script data-jsfiddle="example">
+            var data = [
+              ["", "", ""]
+            ];
+
+            $('#example').handsontable({
+              data: data,
+              minSpareRows: 1,
+              colHeaders: true,
+              contextMenu: true, 
+              rowHeaders: true,
+              nativeScrollbars: true
+            });
+
+        </script>
+        
+        
+           
+       
+  <script type="text/javascript">
+    function exportar(){
+    	
+    	var handsontable = $('#example').data('handsontable');
+
+    	alert(JSON.stringify(handsontable.getData()));
+    }
+  </script>
+
+</div>
+
+
+</body>
+</html>
