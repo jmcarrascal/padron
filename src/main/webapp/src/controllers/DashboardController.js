@@ -42,7 +42,7 @@ function DashboardController($scope, $rootScope, $http, $routeParams, I18nFactor
 				        	
 				        	$http({
 				                method: 'POST',
-				                url: 'http://localhost:8080/padron/rest/importPadron',
+				                url: $rootScope.baseUrl + '/rest/importPadron',
 				                headers : {'Content-Type': 'application/json'},
 				                data: {"data":handsontable.getData()}				                
 				            }).success(function (result) {
