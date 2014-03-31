@@ -43,7 +43,8 @@ public class RESTController {
 	
 	@PreAuthorize("hasRole('ROLE_USER')")
 	@RequestMapping(value="/isValid", method = RequestMethod.POST)
-	public void isValid(Locale locale) {
+	public @ResponseBody String isValid(Locale locale) {
+		return "";
 	} 
 	
 	@RequestMapping(value="/loginOut", method = RequestMethod.GET)

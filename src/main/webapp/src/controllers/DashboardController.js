@@ -7,9 +7,8 @@ function DashboardController($scope, $rootScope, $http, $routeParams, I18nFactor
 	
 	$http({
         method: 'POST',
-        url: $rootScope.baseUrl + '/rest/isValid',
-        headers : {'Content-Type': 'application/json'},
-        data:''				                
+        url: $rootScope.baseUrl + '/rest/isValid'
+        	                
     }).success(function (result) {
     	
     }).error(function (result, status) {
