@@ -49,7 +49,7 @@ public class DatosEntrega {
 	public Connection getConnection() throws Exception {
 
     String system           = "192.168.0.100";
-    String collectionName   = "LIBIVASS1";
+    String collectionName   = "LIBIVASG1";
     String tableName        = "DD.CLI";
     System.out.println(system);
 

@@ -72,11 +72,11 @@ public class PadronController {
 						padron.setCuit(cuit_);
 								
 					}else{
-						return new JsonResult(false, "El campo " + registro[0] + " no contiene la estructura de un nuemro de CUIT sin guiones ");
+						return new JsonResult(false, "El campo " + registro[0] + " no contiene la estructura de un número de CUIT sin guiones ");
 						
 					}
 				}catch(NumberFormatException ne){
-					return new JsonResult(false, "El campo " + registro[0] + " no contiene la estructura de un nuemro de CUIT sin guiones ");
+					return new JsonResult(false, "El campo " + registro[0] + " no contiene la estructura de un número de CUIT sin guiones ");
 				}
 				
 				
@@ -97,7 +97,7 @@ public class PadronController {
 		 
 		 de.updatePadron(listPadron);
 		
-		return new JsonResult(true, "OK");
+		return new JsonResult(true, "Se ha generado la importación con éxito");
 		
 	}
 	

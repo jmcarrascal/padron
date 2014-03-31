@@ -33,7 +33,7 @@ function DashboardController($scope, $rootScope, $http, $routeParams, I18nFactor
 				
 								
 				 var data = [
-				              ["", "", ""]
+				              ["", ""]
 				            ];
 
 				            $('#example').handsontable({
