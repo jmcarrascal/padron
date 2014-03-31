@@ -74,7 +74,7 @@ public class DatosEntrega {
         try{
         Connection con = getConnNueva();      
         for(Padron padron : padronList){
-	        PreparedStatement pstmt = con.prepareStatement("update \"DD.CLI\" set IIBB = ? where CLCUIT = ?");
+	        PreparedStatement pstmt = con.prepareStatement("update \"DD.CLI\" set CLPOLI = ? where CLCUIT = ?");
 	        pstmt.setDouble(1, padron.getAlicuota());
 	        pstmt.setString(2, padron.getCuit());    
 	        pstmt.executeUpdate();
