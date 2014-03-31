@@ -7,7 +7,7 @@ function DashboardController($scope, $rootScope, $http, $routeParams, I18nFactor
 	
 	$http({
         method: 'POST',
-        url: $rootScope.baseUrl + '/rest/isValid'
+        url:'http://192.168.0.120:9080/rest/isValid'
         	                
     }).success(function (result) {
     	

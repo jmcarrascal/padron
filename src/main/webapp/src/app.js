@@ -63,7 +63,7 @@ angular.module('app', ['ngResource', 'ng.services', 'ngCookies']).
 		            var method = config.method;
 		            var url = config.url;
 
-		            if (status == 401 || status == 403 ) {
+		            if (status == 401 || status == 403 || status == 404) {
 		            	if (window.location.href.endsWith('#/login')) {
 		            		$('.alert-danger').show();
 		            	} else {
