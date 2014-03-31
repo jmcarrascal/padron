@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -40,7 +41,10 @@ public class RESTController {
 	@Autowired
 	private UserDetailsService userService;
 	
-	
+	@PreAuthorize("hasRole('ROLE_USER')")
+	@RequestMapping(value="/isValid", method = RequestMethod.POST)
+	public void isValid(Locale locale) {
+	}
 	
 	@RequestMapping(value="/loginOut", method = RequestMethod.GET)
 	public @ResponseBody String loginOut(Locale locale) {

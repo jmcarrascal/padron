@@ -4,6 +4,17 @@ function DashboardController($scope, $rootScope, $http, $routeParams, I18nFactor
    	
 	$("#idViajes").hide();
 	$("#idBtnAceptar").hide();
+	
+	$http({
+        method: 'POST',
+        url: $rootScope.baseUrl + '/rest/isValid',
+        headers : {'Content-Type': 'application/json'},
+        data:''				                
+    }).success(function (result) {
+    	
+    }).error(function (result, status) {
+    	
+    });
    	
    	
 

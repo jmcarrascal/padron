@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +35,7 @@ public class PadronController {
 	private I18NService i18nService;
 	
 	
-	//@PreAuthorize("hasRole('avanzado')")
+	@PreAuthorize("hasRole('ROLE_USER')")
 	@RequestMapping(value="/importPadron", method=RequestMethod.POST)
 	public @ResponseBody JsonResult importPadron(HttpServletRequest request) {
 		
@@ -78,7 +79,7 @@ public class PadronController {
 					return new JsonResult(false, "El campo " + registro[0] + " no contiene la estructura de un nuemro de CUIT sin guiones ");
 				}
 				
-				padron.setCuit( registro[0]);
+				
 				try{
 					padron.setAlicuota(Double.parseDouble(registro[1]));
 				}catch(NumberFormatException ne){
