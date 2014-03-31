@@ -47,11 +47,13 @@ function DashboardController($scope, $rootScope, $http, $routeParams, I18nFactor
 				                data: {"data":handsontable.getData()}				                
 				            }).success(function (result) {
 				            	
+				            	alert(result.result);
+				            	
 				            }).error(function (result, status) {
 				            	
 				            });
 
-				        	alert(JSON.stringify(handsontable.getData()));	
+			
 				            }
 				
 				

@@ -55,11 +55,34 @@ public class PadronController {
 		 for(String[] registro : data.getData()){
 			if (registro[0] != null){ 
 				Padron padron = new Padron();
+				try{
+					
+					Long.parseLong(registro[0]);
+					if(registro[0].length() == 11){
+						
+						
+					
+						String primero = registro[0].substring(0, 2);
+						String segundo = registro[0].substring(2, 10);
+						String tercero = registro[0].substring(10, 11);
+						
+						String cuit_ = primero + "-" + segundo + "-" + tercero;
+						
+						padron.setCuit(cuit_);
+								
+					}else{
+						return new JsonResult(false, "El campo " + registro[0] + " no contiene la estructura de un nuemro de CUIT sin guiones ");
+						
+					}
+				}catch(NumberFormatException ne){
+					return new JsonResult(false, "El campo " + registro[0] + " no contiene la estructura de un nuemro de CUIT sin guiones ");
+				}
+				
 				padron.setCuit( registro[0]);
 				try{
 					padron.setAlicuota(Double.parseDouble(registro[1]));
 				}catch(NumberFormatException ne){
-					return new JsonResult(false, "El registro con el cuit " + registro[1] + " contiene el valor de la alicuota incorrecto. ");
+					return new JsonResult(false, "El registro con el cuit " + registro[0] + " contiene el valor de la alicuota incorrecto. ");
 				}
 				listPadron.add(padron);
 			}
