@@ -117,7 +117,7 @@ function getBaseUrl($location) {
 	var host = $location.host();
 	var port = $location.port();
 	
-	return "http://192.168.0.120:8080/padron";
+	return "http://192.168.0.120:9080/padron";
 //	
 //	if (protocol != '' && host != '' && port != '') {
 //		return protocol + '://' + host + ':' + port + '/webplatform';
@@ -137,7 +137,7 @@ function getLoginUrl($location) {
 	
 	
 	var url;
-	url = "http://192.168.0.120:8080/padron";
+	url = "http://192.168.0.120:9080/padron";
 //	if (protocol != '' && host != '' && port != '') {
 //		url = protocol + '://' + host + ':' + port + '\:' + port + '/webplatform';
 //	} else {

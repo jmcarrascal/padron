@@ -19,7 +19,7 @@
 var services = angular.module('ng.services', ['ngResource']);
 
 services.factory('I18nFactory', function ($resource) {
-	return $resource('http://192.168.0.120:8080/padron/rest/i18n/:action/:lang/:module', {}, {
+	return $resource('http://192.168.0.120:9080/padron/rest/i18n/:action/:lang/:module', {}, {
 		getLanguage: { method: 'GET', params: {'action' : 'getLanguage'}, isArray: false },
 		getDefaultLanguage: { method: 'GET', params: {'action' : 'getDefaultLanguage'}, isArray: false },
 		getOthersLanguages: { method: 'GET', params: {'action' : 'getOthersLanguages'}, isArray: true },
